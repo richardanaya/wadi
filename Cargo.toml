@@ -1,0 +1,16 @@
+[package]
+name = "wadi"
+version = "0.0.1"
+authors = ["Richard Anaya"]
+categories = ["wasm", "no-std"]
+include = [
+    "src/**/*.rs",
+    "Cargo.toml",
+]
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/richardanaya/wadi"
+repository = "https://github.com/richardanaya/wadi"
+description = "A device interface for wasi"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
