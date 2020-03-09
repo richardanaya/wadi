@@ -47,7 +47,7 @@ pub fn name() -> usize {
 }
 ```
 
-# wabi device interface
+# wadi device interface
 
 * init() - start the device and register scopes
 * read(path,location, size, target) - read a certain number of bytes from a file path
@@ -57,6 +57,6 @@ pub fn name() -> usize {
 * free(ptr) - free data 
 * name() - returns a name of the module
 
-# wabi host interface
+# wadi host interface
 * register_device(file_scope, file_type)
 * error(err)
