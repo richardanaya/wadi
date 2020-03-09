@@ -50,5 +50,5 @@ fn write(path: CString, location:usize, size:usize, ptr usize) -> u32 {
 * free(ptr) - free data 
 
 # wabi host interface
-* register_device(scope)
+* register_device(file_scope, file_type)
 * error(err)
