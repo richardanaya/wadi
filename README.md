@@ -14,6 +14,12 @@ The device driver exposes a number of external facing functions that will be cal
 
 The responsability of the device module will be to first register the scope of files that will be handled. Cow bell might only want a single file in your wasi host environment ('/dev/cowbell') but other devices, might want to handle whole heirarhies of directories (`/dev/usb/*`)
 
+Once registered, the device will be usable like any other `wasi` file.
+
+```rust
+libw::write_text("/dev/cowbell","play");
+```
+
 # wabi device interface
 
 * init()
