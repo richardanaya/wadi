@@ -21,6 +21,7 @@ The responsability of the device module will be to first register the scope of f
 * write(path,data, size)
 * seek(path,location)
 * get_size(path)
+* malloc(size)
 
 # wabi host interface
 * register_device(scope)
