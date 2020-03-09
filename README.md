@@ -22,6 +22,8 @@ Once registered, the device will be usable like any other `wasi` file.
 libw::write_text("/dev/cowbell","play");
 ```
 
+`wadi` makes no restrictions on what additional host functions are exposed to web assembly module, allowing the device to do anything within the host's power.
+
 # Example
 
 ```rust
