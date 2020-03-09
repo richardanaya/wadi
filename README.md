@@ -20,6 +20,24 @@ Once registered, the device will be usable like any other `wasi` file.
 libw::write_text("/dev/cowbell","play");
 ```
 
+# Example
+
+```rust
+use wadi::{register_device,SUCCESS,BLOCK_FILE,CString}
+use js_ffi::*;
+
+#[no_mangle]
+pub fn init() {
+    register_device("/dev/cowbell",BLOCK_FILE);
+}
+
+#[no_mangle]
+fn write(path: CString, location:usize, size:usize, ptr usize) -> u32 {
+    js!(window.alert).invoke_1("clonk!");
+    SUCCESS
+}
+```
+
 # wabi device interface
 
 * init() - start the device and register scopes
