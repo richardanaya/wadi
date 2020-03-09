@@ -27,7 +27,7 @@ libw::write_text("/dev/cowbell","play");
 # Example
 
 ```rust
-use wadi::{register_device,SUCCESS,BLOCK_FILE,CString}
+use wadi::{register_device,SUCCESS,BLOCK_FILE,CString,cstr}
 use js_ffi::*;
 
 #[no_mangle]
@@ -36,9 +36,14 @@ pub fn init() {
 }
 
 #[no_mangle]
-fn write(path: CString, location:usize, size:usize, ptr usize) -> u32 {
+pub fn write(path: CString, location:usize, size:usize, ptr usize) -> u32 {
     js!(window.alert).invoke_1("clonk!");
     SUCCESS
+}
+
+#[no_mangle]
+pub fn name() -> usize {
+    cstr("cowbell")
 }
 ```
 
@@ -50,6 +55,7 @@ fn write(path: CString, location:usize, size:usize, ptr usize) -> u32 {
 * query(path) - get information on one or many files controlled by the device
 * malloc(size) - ask for some memory to be able to write data into
 * free(ptr) - free data 
+* name() - returns a name of the module
 
 # wabi host interface
 * register_device(file_scope, file_type)
