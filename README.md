@@ -22,11 +22,12 @@ libw::write_text("/dev/cowbell","play");
 
 # wabi device interface
 
-* init()
-* read(path,location, size)
-* write(path,data,location,size)
-* query(path)
-* malloc(size)
+* init() - start the device and register scopes
+* read(path,location, size, target) - read a certain number of bytes from a file path
+* write(path,data,location,size) - write a certain number of bytes from a file
+* query(path) - get information on one or many files controlled by the device
+* malloc(size) - ask for some memory to be able to write data into
+* free(ptr) - free data 
 
 # wabi host interface
 * register_device(scope)
