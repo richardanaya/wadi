@@ -14,7 +14,7 @@ The device driver exposes a number of external facing functions that will be cal
 
 The responsability of the device module will be to first register the scope of files that will be handled. Cow bell might only want a single file in your wasi host environment ('/dev/cowbell') but other devices, might want to handle whole heirarhies of directories (`/dev/usb/*`)
 
-# wabi interface
+# wabi device interface
 
 * init()
 * read(path,size)
@@ -22,6 +22,6 @@ The responsability of the device module will be to first register the scope of f
 * seek(path,location)
 * get_size(path)
 
-# wabi functions
+# wabi host interface
 * register_device(scope)
 * error(err)
