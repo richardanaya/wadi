@@ -1,10 +1,10 @@
-type CStrPtr = usize;
+extern crate cstring;
+pub use cstring::{cstr,CString};
 
 extern "C" {
-    pub fn register_device(scope: CStrPtr);
-    pub fn device_error(err: CStrPtr);
+    pub fn register_scope(scope: CString);
+    pub fn device_error(err: CString);
 }
-
 
 #[no_mangle]
 fn malloc(size: usize) -> *mut u8 {

@@ -1,6 +1,6 @@
 [package]
 name = "wadi"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Richard Anaya"]
 categories = ["wasm", "no-std"]
 include = [
@@ -14,3 +14,4 @@ description = "A device interface for wasi"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+cstring = "0.0"
