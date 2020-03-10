@@ -3,11 +3,26 @@ extern crate alloc;
 use alloc::vec::Vec;
 
 extern crate cstring;
-pub use cstring::{cstr,CString};
+pub use cstring::{cstr, CString};
 
-extern "C" {
-    pub fn register_scope(scope: CString);
-    pub fn device_error(err: CString);
+mod v1 {
+    use super::*;
+    extern "C" {
+        pub fn register_scope(scope: CString);
+        pub fn device_error(err: CString);
+    }
+}
+
+pub fn register_scope(scope: &str) {
+    unsafe {
+        v1::register_scope(cstr(scope));
+    }
+}
+
+pub fn device_error(scope: &str) {
+    unsafe {
+        v1::device_error(cstr(scope));
+    }
 }
 
 #[no_mangle]

@@ -1,6 +1,6 @@
 [package]
 name = "wadi"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Richard Anaya"]
 categories = ["wasm", "no-std"]
 include = [
