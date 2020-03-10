@@ -1,3 +1,7 @@
+#![no_std]
+extern crate alloc;
+use alloc::vec::Vec;
+
 extern crate cstring;
 pub use cstring::{cstr,CString};
 
