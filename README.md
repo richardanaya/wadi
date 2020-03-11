@@ -27,18 +27,17 @@ libw::write_text("/dev/cowbell","play");
 # Example
 
 ```rust
-use wadi::{register_device,SUCCESS,BLOCK_FILE,CString,cstr}
+use wadi::{register_scope,CString,cstr}
 use js_ffi::*;
 
 #[no_mangle]
 pub fn init() {
-    register_device("/dev/cowbell",BLOCK_FILE);
+    register_scope("/dev/cowbell");
 }
 
 #[no_mangle]
-pub fn write(path: CString, location:usize, size:usize, ptr usize) -> u32 {
+pub fn write(path: CString, data_ptr: usize, data_len: usize) {
     js!(window.alert).invoke_1("clonk!");
-    SUCCESS
 }
 
 #[no_mangle]
